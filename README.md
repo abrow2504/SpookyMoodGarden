@@ -9,8 +9,8 @@ A hauntingly beautiful mood tracking application where your emotions bloom into 
 - **AI Narration** - Receive personalized, gothic-inspired reflections on your emotional patterns
 - **User Authentication** - Secure login and profile management
 - **Mood History** - View your complete mood timeline with personal notes
-- **Whimsical Effects** - Sparkle cursor effects and floating atmospheric lights
-- **Responsive Design** - Works seamlessly across desktop and mobile devices
+- **Whimsical Effects** - cursor effects and floating atmospheric lights
+- **Responsive Design** - Works across desktop and mobile devices
 
 ## Getting Started
 
@@ -90,11 +90,7 @@ src/
 
 1. **Sign In** - Create an account or log in with your credentials
 2. **Log Mood** - Select a mood and optionally add a personal note
-3. **Watch Garden Grow** - Your mood entries manifest as plants in the garden
+3. **Watch Garden Grow** - Your mood entries manifest as plants and spirits in the garden
 4. **Get Insights** - Read AI-generated narration reflecting your emotional journey
-5. **Track Over Time** - Access your complete mood history with timestamps
 
 
-## License
-
-This project is open source and available under the MIT License.

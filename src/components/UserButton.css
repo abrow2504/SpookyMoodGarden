@@ -1,0 +1,57 @@
+.user-button {
+  background: linear-gradient(135deg, rgba(26, 26, 26, 0.9) 0%, rgba(45, 27, 61, 0.9) 100%);
+  border: 1px solid #444;
+  border-radius: 2rem;
+  padding: 0.5rem 1rem;
+  color: #eee;
+  font-family: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(10px);
+  box-shadow: 
+    0 2px 10px rgba(0, 0, 0, 0.3),
+    0 0 10px rgba(202, 166, 223, 0.1);
+}
+
+.user-button:hover {
+  background: linear-gradient(135deg, rgba(45, 27, 61, 0.9) 0%, rgba(202, 166, 223, 0.2) 100%);
+  border-color: #caa6df;
+  transform: translateY(-1px);
+  box-shadow: 
+    0 4px 15px rgba(0, 0, 0, 0.4),
+    0 0 15px rgba(202, 166, 223, 0.2);
+}
+
+.user-button:active {
+  transform: translateY(0);
+}
+
+.user-icon {
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+}
+
+.user-text {
+  font-weight: 500;
+  max-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+  .user-button {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+  }
+  
+  .user-text {
+    max-width: 80px;
+  }
+}

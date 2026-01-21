@@ -1,0 +1,100 @@
+.mood-form {
+  background: var(--bg-card);
+  backdrop-filter: blur(20px);
+  padding: 2rem;
+  border-radius: 24px;
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3),
+              0 0 20px var(--shadow-glow),
+              inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: all var(--transition-smooth);
+}
+
+.mood-form h2 {
+  font-family: 'Merriweather', Georgia, serif;
+}
+
+.mood-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.mood-options button {
+  background: rgba(44, 44, 44, 0.6);
+  backdrop-filter: blur(10px);
+  color: #ddd;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.65rem 1.25rem;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all var(--transition-smooth);
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: 500;
+}
+
+.mood-options button:hover {
+  background: rgba(68, 68, 68, 0.8);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.mood-options .selected {
+  background: linear-gradient(135deg, var(--purple-primary) 0%, var(--purple-light) 100%);
+  color: #000;
+  border-color: var(--purple-light);
+  box-shadow: 0 4px 16px rgba(202, 166, 223, 0.4),
+              inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  font-weight: 600;
+}
+
+.mood-form textarea {
+  width: 100%;
+  height: 100px;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  border-radius: 16px;
+  background: rgba(17, 17, 17, 0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #eee;
+  font-family: 'Merriweather', Georgia, serif;
+  font-size: 1rem;
+  transition: all var(--transition-smooth);
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+.mood-form textarea:focus {
+  outline: none;
+  border-color: var(--purple-primary);
+  box-shadow: 0 0 0 3px rgba(202, 166, 223, 0.2),
+              0 4px 12px rgba(0, 0, 0, 0.2);
+  background: rgba(17, 17, 17, 0.8);
+}
+
+.mood-form button[type="submit"] {
+  background: linear-gradient(135deg, var(--purple-primary) 0%, var(--purple-light) 100%);
+  color: #000;
+  border: none;
+  padding: 0.875rem 2rem;
+  border-radius: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(202, 166, 223, 0.3);
+  transition: all var(--transition-smooth);
+  letter-spacing: 0.02em;
+}
+
+.mood-form button[type="submit"]:hover {
+  background: linear-gradient(135deg, var(--purple-light) 0%, #e8c9f7 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(202, 166, 223, 0.4);
+}
+
+.mood-form button[type="submit"]:active {
+  transform: translateY(0);
+}

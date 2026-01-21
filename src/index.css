@@ -1,0 +1,64 @@
+:root {
+  line-height: 1.6;
+
+  --purple-primary: #caa6df;
+  --purple-light: #dfb4f1;
+  --purple-dark: #9b7bb3;
+  --bg-dark: #0d0d0d;
+  --bg-card: rgba(26, 26, 26, 0.6);
+  --bg-glass: rgba(255, 255, 255, 0.05);
+  --border-subtle: rgba(255, 255, 255, 0.1);
+  --shadow-glow: rgba(202, 166, 223, 0.15);
+  --transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button {
+  border-radius: 12px;
+  border: 1px solid var(--border-subtle);
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: var(--bg-card);
+  cursor: pointer;
+  transition: all var(--transition-smooth);
+  backdrop-filter: blur(10px);
+}
+
+button:hover {
+  border-color: var(--purple-primary);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px var(--shadow-glow);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+button:focus,
+button:focus-visible {
+  outline: 2px solid var(--purple-primary);
+  outline-offset: 2px;
+}

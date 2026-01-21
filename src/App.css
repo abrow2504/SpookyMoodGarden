@@ -1,0 +1,111 @@
+body {
+  margin: 0;
+  font-family: 'Merriweather', Georgia, serif;
+  background: linear-gradient(180deg, #0d0d0d 0%, #1a0a1e 50%, #0d0d0d 100%);
+  color: #eee;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.app-container {
+  max-width: 768px;
+  padding: 2rem;
+  text-align: center;
+}
+
+.header-content {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.header-main {
+  text-align: center;
+}
+
+/* Position UserButton absolutely on larger screens to not affect centering */
+.header-content .user-button {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+header h1 {
+  font-size: 3rem;
+  margin-bottom: 0.1rem;
+  color: var(--purple-primary);
+  font-family: 'UnifrakturCook', cursive, serif;
+  text-shadow: 0 0 30px rgba(202, 166, 223, 0.3),
+               0 2px 8px rgba(0, 0, 0, 0.5);
+  letter-spacing: 0.02em;
+}
+
+.tagline {
+  font-style: italic;
+  color: #888;
+  margin-bottom: 0.5rem;
+  font-family: 'Great Vibes', cursive, serif;
+  font-size: 2rem;
+}
+
+main {
+  margin-bottom: 2rem;
+}
+
+footer {
+  font-size: 0.8rem;
+  color: #444;
+  margin-top: 2rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  /* On medium screens, keep button positioned absolutely but closer */
+  .header-content .user-button {
+    right: -10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  /* Reset positioning on mobile for better layout */
+  .header-content .user-button {
+    position: static;
+    right: auto;
+    top: auto;
+  }
+  
+  .header-main h1 {
+    font-size: 2.5rem;
+  }
+}
+
+/* Subtle cursor spotlight effect */
+.cursor-spotlight {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+  --mouse-x: 50vw;
+  --mouse-y: 50vh;
+  background: radial-gradient(
+    600px circle at var(--mouse-x) var(--mouse-y),
+    rgba(202, 166, 223, 0.08) 0%,
+    rgba(156, 130, 180, 0.04) 30%,
+    transparent 60%
+  );
+  transition: opacity 0.3s ease;
+  opacity: 0.6;
+  mix-blend-mode: lighten;
+}

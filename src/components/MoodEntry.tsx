@@ -1,0 +1,61 @@
+// src/components/MoodEntry.tsx
+import { useState } from "react";
+import { collection, addDoc, Timestamp } from "firebase/firestore";
+import { db } from "../firebase";
+import { useAuth } from "../context/AuthContext";
+import { MOOD_OPTIONS } from "../constants/moods";
+import "./MoodEntry.css";
+
+export default function MoodEntry({ refreshMoods }: { refreshMoods: () => void }) {
+  const [selectedMood, setSelectedMood] = useState("");
+  const [note, setNote] = useState("");
+  const { user } = useAuth();
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!selectedMood) return;
+
+    try {
+      await addDoc(collection(db, "moods"), {
+        mood: selectedMood,
+        note: note || "",
+        timestamp: Timestamp.now(),
+        userId: user?.uid || "anonymous"
+      });
+      setSelectedMood("");
+      setNote("");
+      // Removed alert on save
+      refreshMoods(); // Refresh garden after saving
+    } catch (err) {
+      console.error("Error saving mood:", err);
+      // Optionally, you can handle errors differently or silently
+    }
+  };
+
+  return (
+    <form onSubmit={handleSubmit} className="mood-form">
+      <h2>🌒 Log Your Mood</h2>
+
+      <div className="mood-options">
+        {MOOD_OPTIONS.map((m) => (
+          <button
+            type="button"
+            key={m}
+            className={selectedMood === m ? "selected" : ""}
+            onClick={() => setSelectedMood(m)}
+          >
+            {m}
+          </button>
+        ))}
+      </div>
+
+      <textarea
+        placeholder="Add a note (optional)..."
+        value={note}
+        onChange={(e) => setNote(e.target.value)}
+      />
+
+      <button type="submit">Plant It 🌱</button>
+    </form>
+  );
+}
